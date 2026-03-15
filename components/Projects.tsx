@@ -5,15 +5,15 @@ import { FiExternalLink, FiGithub, FiGlobe } from "react-icons/fi";
 
 export default function Projects() {
   const projects = [
-    {
-      id: "01",
-      title: "HelloPanso CRM",
-      desc: "Customer relationship management dashboard with analytics, user management and automation.",
-      link: "https://crm.hellopanso.com/",
-      type: "Dashboard",
-      tech: ["Vue", "Tailwind", "API"],
-      icon: FiGlobe,
-    },
+    // {
+    //   id: "01",
+    //   title: "HelloPanso CRM",
+    //   desc: "Customer relationship management dashboard with analytics, user management and automation.",
+    //   link: "https://crm.hellopanso.com/",
+    //   type: "Dashboard",
+    //   tech: ["Vue", "Tailwind", "API"],
+    //   icon: FiGlobe,
+    // },
     {
       id: "02",
       title: "Connester",
@@ -23,15 +23,15 @@ export default function Projects() {
       tech: ["React", "Node", "API"],
       icon: FiGlobe,
     },
-    {
-      id: "03",
-      title: "MDRC India",
-      desc: "Corporate business website with modern UI and responsive design.",
-      link: "https://www.mdrcindia.com/",
-      type: "Corporate Website",
-      tech: ["Vue", "Tailwind"],
-      icon: FiGlobe,
-    },
+    // {
+    //   id: "03",
+    //   title: "MDRC India",
+    //   desc: "Corporate business website with modern UI and responsive design.",
+    //   link: "https://www.mdrcindia.com/",
+    //   type: "Corporate Website",
+    //   tech: ["Vue", "Tailwind"],
+    //   icon: FiGlobe,
+    // },
     {
       id: "04",
       title: "NxLite",
@@ -41,24 +41,24 @@ export default function Projects() {
       tech: ["Next.js", "Tailwind", "Framer Motion"],
       icon: FiGlobe,
     },
-    {
-      id: "05",
-      title: "Soundstage Studio",
-      desc: "Music production platform with login dashboard and project management.",
-      link: "https://dev.soundstage.studio/login",
-      type: "Media Platform",
-      tech: ["React", "API"],
-      icon: FiGlobe,
-    },
-    {
-      id: "06",
-      title: "HelloPanso Share",
-      desc: "Secure cloud file sharing system integrated with HelloPanso ecosystem.",
-      link: "https://share.hellopanso.com/",
-      type: "File Sharing",
-      tech: ["Vue", "Cloud"],
-      icon: FiGlobe,
-    },
+    // {
+    //   id: "05",
+    //   title: "Soundstage Studio",
+    //   desc: "Music production platform with login dashboard and project management.",
+    //   link: "https://dev.soundstage.studio/login",
+    //   type: "Media Platform",
+    //   tech: ["React", "API"],
+    //   icon: FiGlobe,
+    // },
+    // {
+    //   id: "06",
+    //   title: "HelloPanso Share",
+    //   desc: "Secure cloud file sharing system integrated with HelloPanso ecosystem.",
+    //   link: "https://share.hellopanso.com/",
+    //   type: "File Sharing",
+    //   tech: ["Vue", "Cloud"],
+    //   icon: FiGlobe,
+    // },
   ];
 
   return (
