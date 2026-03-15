@@ -62,7 +62,7 @@ export default function Skills() {
   const text = "Skills";
 
   return (
-    <section id="skills" className="bg-black text-white px-6">
+    <section id="skills" className="bg-black text-white px-6 pt-24">
       <h2 className="text-4xl font-bold mb-12 text-center flex justify-center flex-wrap">
         {text.split("").map((char, index) => (
           <motion.span

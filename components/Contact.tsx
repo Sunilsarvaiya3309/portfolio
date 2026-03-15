@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-black text-white py-16 md:py-24 relative overflow-hidden"
+      className="bg-black text-white py-24 relative overflow-hidden"
     >
       {/* floating background icons (hidden on mobile) */}
       {/* floating background icons */}
