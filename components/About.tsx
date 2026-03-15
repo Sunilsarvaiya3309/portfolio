@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const stats = [
   { id: "01", number: "2+", title: "Years of Experience" },
@@ -92,6 +92,15 @@ export default function About() {
     window.addEventListener("click", close);
     return () => window.removeEventListener("click", close);
   }, []);
+
+  const [width, setWidth] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setWidth(
+      carouselRef.current!.scrollWidth - carouselRef.current!.offsetWidth,
+    );
+  }, []);
   return (
     <section
       id="about"
@@ -171,33 +180,28 @@ export default function About() {
           </div>
         </div>
 
-        {/* INFINITE SKILL CARDS */}
-        <div className="relative w-full overflow-hidden">
+        <div className="w-full relative py-4 overflow-hidden">
           <motion.div
-            className="flex gap-8 will-change-transform"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              ease: "linear",
-              duration: 15,
-              repeat: Infinity,
-            }}
+            ref={carouselRef}
+            className="flex gap-4 md:gap-8 cursor-grab"
+            drag="x"
+            dragConstraints={{ left: -width, right: 0 }}
+            whileTap={{ cursor: "grabbing" }}
           >
-            {[...cards, ...cards].map((card, i) => (
-              <div
+            {cards.map((card, i) => (
+              <motion.div
                 key={i}
-                className="min-w-[260px] md:min-w-[280px] bg-zinc-900 border border-red-500/30 rounded-xl p-6 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.5)] transition"
+                className="min-w-[180px] sm:min-w-[240px] md:min-w-[280px] bg-zinc-900 border border-red-500/30 rounded-xl p-4 sm:p-6 flex-shrink-0"
+                whileHover={{ scale: 1.05 }}
               >
-                <h3 className="text-red-500 text-xl font-semibold mb-3">
+                <h3 className="text-red-500 text-lg sm:text-xl font-semibold mb-2">
                   {card.title}
                 </h3>
-
-                <p className="text-gray-400 text-sm">{card.text}</p>
-              </div>
+                <p className="text-gray-400 text-xs sm:text-sm">{card.text}</p>
+              </motion.div>
             ))}
           </motion.div>
         </div>
-        {/* WORK EXPERIENCE */}
-
         {/* WORK EXPERIENCE */}
 
         <div className="mt-24">
