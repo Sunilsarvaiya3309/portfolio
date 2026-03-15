@@ -51,7 +51,7 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 flex flex-col lg:flex-row items-center gap-6 sm:gap-12"
+        className="relative z-10 flex flex-col lg:flex-row sm:pt-0 pt-24 items-center gap-6 sm:gap-12"
       >
         {/* Profile Image */}
         <motion.div
