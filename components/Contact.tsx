@@ -1,9 +1,32 @@
 "use client";
-
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiLinkedin, FiSend } from "react-icons/fi";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleWhatsApp = () => {
+    if (!name || !email || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    const phoneNumber = "919727808076"; // without + sign
+    const text = `Hello, my name is ${name}.
+
+    Email: ${email}.
+
+    Message: ${message}`;
+
+    const encodedText = encodeURIComponent(text);
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+    
+    window.open(url, "_blank");
+  };
   return (
     <section
       id="contact"
@@ -79,7 +102,8 @@ export default function Contact() {
             </p>
 
             {/* Email */}
-            <motion.div
+            <motion.a
+              href="mailto:sunilsarvaiya7989@gmail.com"
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-4 border border-red-500/40 p-4 rounded-lg hover:border-red-500 transition"
             >
@@ -88,10 +112,11 @@ export default function Contact() {
                 <p className="text-sm text-gray-400">Email</p>
                 <p className="break-all">sunilsarvaiya7989@gmail.com</p>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* Phone */}
-            <motion.div
+            <motion.a
+              href="tel:+919727808076"
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-4 border border-red-500/40 p-4 rounded-lg hover:border-red-500 transition"
             >
@@ -100,7 +125,7 @@ export default function Contact() {
                 <p className="text-sm text-gray-400">Mobile</p>
                 <p>+91 9727808076</p>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* LinkedIn */}
             <motion.a
@@ -130,6 +155,8 @@ export default function Contact() {
               <input
                 type="text"
                 placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full mt-2 p-3 bg-zinc-900 border border-red-500/40 rounded-lg focus:outline-none focus:border-red-500"
               />
             </div>
@@ -139,6 +166,8 @@ export default function Contact() {
               <input
                 type="email"
                 placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full mt-2 p-3 bg-zinc-900 border border-red-500/40 rounded-lg focus:outline-none focus:border-red-500"
               />
             </div>
@@ -148,11 +177,14 @@ export default function Contact() {
               <textarea
                 rows={4}
                 placeholder="How can I help you?"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full mt-2 p-3 bg-zinc-900 border border-red-500/40 rounded-lg focus:outline-none focus:border-red-500"
               />
             </div>
 
             <motion.button
+              onClick={handleWhatsApp}
               type="button"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.92 }}

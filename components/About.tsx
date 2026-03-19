@@ -303,7 +303,7 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className="max-w-6xl mt-24 mx-auto mb-20">
+        <div className="max-w-6xl mt-24 mx-auto">
           <h2 className="sm:text-4xl text-2xl font-bold text-center text-red-500 mb-16">
             {"Educational Journey".split("").map((char, index) => (
               <motion.span

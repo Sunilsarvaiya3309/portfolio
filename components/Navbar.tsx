@@ -32,9 +32,11 @@ export default function Navbar() {
     <>
       {/* Header */}
       <nav className="fixed top-0 left-0 w-full h-20 flex items-center justify-between px-8 bg-black text-white z-50 shadow-[0_10px_30px_rgba(0,0,0,0.8)] border-b border-red-500/20">
-        <h1 className="text-2xl font-extrabold tracking-widest text-red-500 drop-shadow-[0_0_12px_rgba(255,0,0,0.7)] select-none">
-          SUNIL.DEV
-        </h1>
+        <a href="#">
+          <h1 className="text-2xl font-extrabold tracking-widest text-red-500 drop-shadow-[0_0_12px_rgba(255,0,0,0.7)] select-none">
+            SUNIL.DEV
+          </h1>
+        </a>
 
         <button
           onClick={toggleMenu}

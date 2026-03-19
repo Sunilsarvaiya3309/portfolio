@@ -30,7 +30,7 @@ export default function AnimatedCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 border-2 border-red-500 rounded-full pointer-events-none z-[9999] flex items-center justify-center"
+      className="fixed top-0 left-0 w-8 hidden h-8 border-2 border-red-500 rounded-full pointer-events-none z-[9999] sm:flex items-center justify-center"
       style={{
         translateX: cursorX,
         translateY: cursorY,
