@@ -453,7 +453,7 @@ export default function Hero() {
             "
               >
                 <Image
-                  src="/profile/sunil.jpeg"
+                  src="/profile/sunil (2).jpeg"
                   alt="Sunil Sarvaiya"
                   fill
                   priority
@@ -467,7 +467,7 @@ export default function Hero() {
                 grayscale-[15%]
                 transition-transform
                 duration-700
-                hover:scale-110
+                hover:scale-105
                 hover:grayscale-0
               "
                 />
